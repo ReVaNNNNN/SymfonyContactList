@@ -9,9 +9,10 @@
 <body>
 {% block body %}
     {{ form_start(form) }}
-    {{ form_end(form) }}
+
     {{ form_widget(form) }}
-    <input type="submit">
+    <input type="submit" value="CREATE">
+    {{ form_end(form) }}
 {% endblock %}
 {% block javascripts %}{% endblock %}
 </body>

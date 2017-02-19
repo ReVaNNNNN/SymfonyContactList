@@ -1,7 +1,7 @@
 {% block body %}
-    {% for i in contact %}
-        <p> {{ i.name }} {{ i.surname }} </p>
-        <p> {{ i.description }} </p>
+    {% for key, value in contact %}
+        <p> {{ key + 1 }}. {{ value.name }} {{ value.surname }} </p>
+        <p> {{ value.description }} </p>
         <br>
     {% endfor %}
 {% endblock %}
