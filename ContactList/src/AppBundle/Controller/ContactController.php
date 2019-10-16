@@ -12,29 +12,18 @@ use Symfony\Component\HttpFoundation\Request;
 
 class ContactController extends Controller
 {
-    //formularz dodania nowej osoby do kontaktów
     /**
      * @Route("/new")
      * @Template()
      * @Method("GET")
      */
     public function newAction()
-    {   // tworzymy nowy obiekt na podstawie encji(klasy) Contact
+    {
         $contact = new Contact();
-        // tworzymy formularz dzięki metodzie z klasy Controller, potrzebujemy do tego stworzyć obiekt klasy ContactType
-        // w którym określone są pola naszego formularza oraz wcześniej już utworzony obiekt $contact
-        $form = $this->createForm(new ContactType(), $contact,
-                                    [
-                                    // w tym miejscu dodajemy przekierowanie po wysłaniu formularza metoda POST
-                                    // (czyli kliknięciu w submit) do poniższego kontrolera
-                                    // który to nasze dane z formularza zapisze w bazie danych
-                                    'action' => $this->generateUrl('app_contact_new')
-                                    ]);
-        // zwracamy do widoku metodę która zbuduje nasz formularz
+        $form = $this->createForm(new ContactType(), $contact, ['action' => $this->generateUrl('app_contact_new')]);
         return ['form' => $form->createView()];
     }
 
-    // dodanie danych z formularza do bazy danych jako nowy rekord w tabeli Contact
     /**
      * @Route("/new")
      * @Template()
