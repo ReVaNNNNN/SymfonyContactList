@@ -44,8 +44,6 @@ class Contact
 
 
     /**
-     * Get id
-     *
      * @return integer 
      */
     public function getId()
@@ -54,8 +52,6 @@ class Contact
     }
 
     /**
-     * Set name
-     *
      * @param string $name
      * @return Contact
      */
@@ -67,8 +63,6 @@ class Contact
     }
 
     /**
-     * Get name
-     *
      * @return string 
      */
     public function getName()
@@ -77,8 +71,6 @@ class Contact
     }
 
     /**
-     * Set surname
-     *
      * @param string $surname
      * @return Contact
      */
@@ -90,8 +82,6 @@ class Contact
     }
 
     /**
-     * Get surname
-     *
      * @return string 
      */
     public function getSurname()
@@ -113,8 +103,6 @@ class Contact
     }
 
     /**
-     * Get description
-     *
      * @return string 
      */
     public function getDescription()
