@@ -30,11 +30,9 @@ class ContactController extends Controller
      * @Method("POST")
      */
     public function createAction(Request $request)
-    {   // tworzymy nowy obiekt na podstawie encji(klasy) Contact
+    {   
         $contact = new Contact();
-        // tworzymy formularz dzięki metodzie z klasy Controller
         $form = $this->createForm(new ContactType(), $contact);
-        // UZUPEŁNIENIE KOMENTARZY
         $form->handleRequest($request);
 
         if($form->isSubmitted() && $form->isValid()) {
@@ -48,8 +46,6 @@ class ContactController extends Controller
 
         return ['form' => $form->createView()];
     }
-
-    // DODAĆ WYSWIETELNIE 1 CONTACTU
 
     // wyświetlenie wszystkich obiektów z tabeli Contact
     /**
